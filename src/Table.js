@@ -16,6 +16,9 @@ function TableBody(props) {
         <tr key={index}>
           <td>{row.name}</td>         
           <td>{row.job}</td>
+          <td>
+              <button onClick={()=>props.removeCharacter(index)}>delete</button>
+          </td>
         </tr>
       );
      }
@@ -28,13 +31,13 @@ function TableBody(props) {
   }
   
   
-  function Table(props) {
-      return (
+  function Table (props) {
+    return (
         <table>
-          <TableHeader />
-          <TableBody characterData={props.characterData} />
+            <TableHeader />
+            <TableBody characterData={props.characterData} removeCharacter={props.removeCharacter} />
         </table>
-      )
-    }
+    );
+}
 
 export default Table;
