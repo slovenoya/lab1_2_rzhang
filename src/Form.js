@@ -5,6 +5,7 @@ function Form(props) {
         {
            name: '',
            job: '',
+           id: '',
         }
      );
 
@@ -12,17 +13,17 @@ function Form(props) {
         const { name, value } = event.target;
         if (name === "job")
           setPerson(
-             {name: person['name'], job: value}
+             {name: person['name'], job: value, id: person['id']}
           );
         else     
            setPerson(
-             {name: value, job: person['job']}   
+             {name: value, job: person['job'], id: person['id']}   
            );
       }
 
       function submitForm() {
         props.handleSubmit(person);
-        setPerson({name: '', job: ''});
+        setPerson({name: '', job: '', id: ''});
       }
 
     return (
@@ -45,9 +46,5 @@ function Form(props) {
         </form>
     );
 }
-
-
-
-
 
 export default Form;
