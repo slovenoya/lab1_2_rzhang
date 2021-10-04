@@ -16,7 +16,7 @@ function MyApp() {
    function updateList(person) { 
       makePostCall(person).then( result => {
          if (result)
-            setCharacters([...characters, person] );
+            setCharacters([...characters, result['new_user']] );
          });
    }
 
